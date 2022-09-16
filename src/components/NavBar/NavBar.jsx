@@ -1,13 +1,13 @@
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import NavDropdown from "react-bootstrap/NavDropdown";
+import CartWidget from "../Logo/CartWidget";
 function NavBar() {
   return (
     <Navbar bg="light" text="light" expand="lg">
       <Container>
-        <Navbar.Brand href="#home">Rocket Fitnes</Navbar.Brand>
+        <Navbar.Brand href="#home">RocketFitnes</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
@@ -26,6 +26,7 @@ function NavBar() {
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
+        <CartWidget />
       </Container>
     </Navbar>
   );
