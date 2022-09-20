@@ -1,7 +1,7 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import NavBar from "./components/NavBar/NavBar";
-import Products from "./components/Products/Products";
+import ItemListContainer from "./components/Items/ItemListContainer";
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
       <header className="App-header">
         <NavBar />
       </header>
-      <Products />
+      <ItemListContainer greeting="Bienvenido/a la tienda de RocketFitnesg"/>
     </div>
   );
 }

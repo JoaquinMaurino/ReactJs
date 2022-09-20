@@ -2,7 +2,7 @@ import { BsFillCartFill } from "react-icons/bs";
 
 function CartWidget() {
   return (
-<BsFillCartFill/>
+<a href="#"><BsFillCartFill/></a>
   )
 }
 

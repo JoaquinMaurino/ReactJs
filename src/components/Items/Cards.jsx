@@ -10,7 +10,7 @@ function Cards(props) {
         <Card.Title>{props.title}</Card.Title>
         <Card.Text>{props.desc}</Card.Text>
         <Card.Text>{props.price}</Card.Text>
-        <Button variant="primary">Ver Más!</Button>
+        <Button>Ver Más!</Button>
       </Card.Body>
     </Card>
   );
