@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./Counter.css";
 
 function ClickCounter(props) {
@@ -16,8 +16,8 @@ function ClickCounter(props) {
     }
   }
 
-  function addToCart(){
-    alert("Producto agregado al carrito")
+  function addToCart() {
+    alert("Producto agregado al carrito");
   }
 
   return (

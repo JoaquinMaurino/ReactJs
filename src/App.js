@@ -10,10 +10,9 @@ function App() {
       <header className="App-header">
         <NavBar />
       </header>
-      <ItemListContainer greeting="Bienvenido/a la tienda de RocketFitnesg"/>
+      <ItemListContainer greeting="Bienvenido/a la tienda de RocketFitnes"/>
     </div>
   );
 }
 
 export default App;
- 

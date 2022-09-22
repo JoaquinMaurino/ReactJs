@@ -7,8 +7,8 @@ function Cards(props) {
     <Card className="card">
       <Card.Img src={props.img} alt="" />
       <Card.Body>
-        <Card.Title>{props.title}</Card.Title>
-        <Card.Text>{props.desc}</Card.Text>
+        <Card.Title>{props.name}</Card.Title>
+        <Card.Text>{props.detail}</Card.Text>
         <Card.Text>{props.price}</Card.Text>
         <Button>Ver Más!</Button>
       </Card.Body>
