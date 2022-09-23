@@ -7,9 +7,9 @@ function Cards(props) {
     <Card className="card">
       <Card.Img src={props.img} alt="" />
       <Card.Body>
-        <Card.Title>{props.name}</Card.Title>
+        <Card.Title><h3>{props.name}</h3></Card.Title>
         <Card.Text>{props.detail}</Card.Text>
-        <Card.Text>{props.price}</Card.Text>
+        <Card.Text><h5>{props.price}</h5></Card.Text>
         <Button>Ver Más!</Button>
       </Card.Body>
     </Card>
