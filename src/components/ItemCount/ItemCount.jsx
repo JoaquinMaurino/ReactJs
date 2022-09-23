@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Counter.css";
 
-function ClickCounter(props) {
+function ItemCount(props) {
   const [clickCount, setClickCount] = useState(props.initial);
 
   function Add() {
@@ -17,7 +17,7 @@ function ClickCounter(props) {
   }
 
   function addToCart() {
-    alert("Producto agregado al carrito");
+    alert("Agregaste " + clickCount + " productos al carrito");
   }
 
   return (
@@ -33,4 +33,4 @@ function ClickCounter(props) {
   );
 }
 
-export default ClickCounter;
+export default ItemCount;
