@@ -1,32 +1,34 @@
-import Cards from "./Cards";
 import { useState, useEffect } from "react";
 import getItems from "../../services/mockAPI";
+import Item from "./Item";
 
-function ItemListContainer(props) {
+function ItemList() {
+  
   let [data, setData] = useState([]);
 
   useEffect(() => {
-    getItems().then((respuestaDatos)=>{
-      setData(respuestaDatos)
-      });
+    getItems().then((respuestaDatos) => {
+      setData(respuestaDatos);
+    });
   }, []);
 
   return (
-    <div className="text-center">
-      <h1>{props.greeting}</h1>
+    <div>
       <div className="container">
         {data.map((item) => {
           return (
-            <Cards
+            <Item
+              key={item.id}
               name={item.name}
               price={item.price}
               detail={item.detail}
               img={item.img}
-            ></Cards>
+            ></Item>
           );
         })}
       </div>
     </div>
   );
 }
-export default ItemListContainer;
+
+export default ItemList;

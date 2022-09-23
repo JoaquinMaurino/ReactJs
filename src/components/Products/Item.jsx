@@ -1,8 +1,8 @@
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import "./CardStyles.css";
+import "./ItemStyles.css";
 
-function Cards(props) {
+function Item(props) {
   return (
     <Card className="card">
       <Card.Img src={props.img} alt="" />
@@ -16,4 +16,4 @@ function Cards(props) {
   );
 }
 
-export default Cards;
+export default Item;
