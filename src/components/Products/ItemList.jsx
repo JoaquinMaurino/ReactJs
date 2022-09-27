@@ -1,21 +1,10 @@
-import { useState, useEffect } from "react";
-import getItems from "../../services/mockAPI";
-import Item from "./Item";
+import React from 'react'
+import Item from './Item';
 
-function ItemList() {
-  
-  let [data, setData] = useState([]);
-
-  useEffect(() => {
-    getItems().then((respuestaDatos) => {
-      setData(respuestaDatos);
-    });
-  }, []);
-
+function ItemList(data) {
   return (
-    <div>
-      <div className="container">
-        {data.map((item) => {
+    <div className="container">
+        {data.item.map((item) => {
           return (
             <Item
               key={item.id}
@@ -23,12 +12,12 @@ function ItemList() {
               price={item.price}
               detail={item.detail}
               img={item.img}
+              stock={item.stock}
             ></Item>
           );
         })}
       </div>
-    </div>
-  );
+  )
 }
 
-export default ItemList;
+export default ItemList

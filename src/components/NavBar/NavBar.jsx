@@ -7,7 +7,7 @@ function NavBar() {
   return (
     <Navbar bg="light" text="light" expand="lg">
       <Container>
-        <Navbar.Brand href="#home">RocketFitnes</Navbar.Brand>
+        <Navbar.Brand href="#home">SGA</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">

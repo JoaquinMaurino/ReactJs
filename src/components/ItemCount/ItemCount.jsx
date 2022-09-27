@@ -11,7 +11,7 @@ function ItemCount(props) {
   }
 
   function Sub() {
-    if (clickCount > 0) {
+    if (clickCount > 1) {
       setClickCount(clickCount - 1);
     }
   }
@@ -21,14 +21,14 @@ function ItemCount(props) {
   }
 
   return (
-    <div className="text-center">
+    <div>
       <h3>Stock: {props.stock}</h3>
-      <div className="container">
+      <div>
         <button onClick={Sub}>-</button>
         <span> {clickCount} </span>
         <button onClick={Add}>+</button>
       </div>
-      <button onClick={addToCart}>Agregar al carrito</button>
+      <button className="agregar" onClick={addToCart}>Agregar al carrito</button>
     </div>
   );
 }
