@@ -6,14 +6,17 @@ const data = [
     img: "/ItemIMG/BotasHombre.jpeg",
     price: "$5000",
     stock: "8",
+    categoria: "Calzado",
   },
   {
     id: "2",
     name: "Borcegos Integral Work",
-    detail: "Borcegos de cuero reforzado, con suela febo con cierre lateral. Plantilla termoformada, forrería interior absorbente.",
+    detail:
+      "Borcegos de cuero reforzado, con suela febo con cierre lateral. Plantilla termoformada, forrería interior absorbente.",
     img: "/ItemIMG/BotasMujer.jpeg",
     price: "$6000",
     stock: "5",
+    categoria: "Calzado",
   },
   {
     id: "3",
@@ -22,6 +25,7 @@ const data = [
     img: "/ItemIMG/Camisa.jpeg",
     price: "$4500",
     stock: "15",
+    categoria: "Indumentaria",
   },
   {
     id: "4",
@@ -30,6 +34,7 @@ const data = [
     img: "/ItemIMG/Cargo.jpeg",
     price: "$8700",
     stock: "18",
+    categoria: "Indumentaria",
   },
   {
     id: "5",
@@ -38,6 +43,7 @@ const data = [
     img: "/ItemIMG/Chaleco.jpeg",
     price: "$6200",
     stock: "7",
+    categoria: "Chaleco",
   },
   {
     id: "6",
@@ -46,6 +52,7 @@ const data = [
     img: "/ItemIMG/ChalecoBlindado.jpeg",
     price: "$6200",
     stock: "7",
+    categoria: "Chaleco",
   },
   {
     id: "7",
@@ -54,6 +61,7 @@ const data = [
     img: "/ItemIMG/Chaqueta.jpeg",
     price: "$6200",
     stock: "7",
+    categoria: "Indumentaria",
   },
   {
     id: "8",
@@ -62,6 +70,7 @@ const data = [
     img: "/ItemIMG/Cinturones.jpeg",
     price: "$6200",
     stock: "7",
+    categoria: "Indumentaria",
   },
   {
     id: "9",
@@ -70,6 +79,7 @@ const data = [
     img: "/ItemIMG/Pantalon.jpeg",
     price: "$6200",
     stock: "7",
+    categoria: "Indumentaria",
   },
   {
     id: "10",
@@ -78,30 +88,34 @@ const data = [
     img: "/ItemIMG/Remera.jpeg",
     price: "$6200",
     stock: "7",
+    categoria: "Indumentaria",
   },
   {
-    id: "10",
+    id: "11",
     name: "Short",
     detail: "Indumentaria",
     img: "/ItemIMG/Short.jpeg",
     price: "$6200",
     stock: "7",
+    categoria: "Indumentaria",
   },
   {
-    id: "10",
+    id: "12",
     name: "Zapatos Hombre",
     detail: "Indumentaria",
     img: "/ItemIMG/ZapatosHombre.jpeg",
     price: "$6200",
     stock: "7",
+    categoria: "Calzado",
   },
   {
-    id: "10",
+    id: "13",
     name: "Zapatos Mujer",
     detail: "Indumentaria",
     img: "/ItemIMG/ZapatosMujer.jpeg",
     price: "$6200",
     stock: "7",
+    categoria: "Calzado",
   },
 ];
 
@@ -109,15 +123,30 @@ export default function getItems() {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve(data);
-    }, 1500);
+    }, 1);
   });
 }
 
-
-export function getItem() {
+export function getItem(idItem) {
   return new Promise((resolve, reject) => {
+    let itemFind = data.find((item) => {
+      return Number(item.id) === idItem;
+    });
     setTimeout(() => {
-      resolve(data[1]);
-    }, 1500);
+      if (itemFind) resolve(itemFind);
+      else reject(new Error("Item no encontrado"));
+    }, 1);
+  });
+}
+
+export function getItemsByCategory(cat) {
+  return new Promise((resolve, reject) => {
+    let itemFind = data.filter((item) => {
+      return item.categoria === cat;
+    });
+    setTimeout(() => {
+      if (itemFind) resolve(itemFind);
+      else reject(new Error("Item no encontrado"));
+    }, 1);
   });
 }
