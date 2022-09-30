@@ -7,7 +7,6 @@ function ItemListContainer(props) {
   let [data, setData] = useState([]);
 
   const cat = useParams().cat;
-  console.log(useParams());
 
   useEffect(() => {
     if (cat === undefined) {

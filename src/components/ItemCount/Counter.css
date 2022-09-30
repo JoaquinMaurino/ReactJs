@@ -1,13 +1,5 @@
-
 button{
     background-color:rgb(218, 216, 216) ;
     border-radius: 8px;
     margin: 1px;
-}
-
-button.agregar{
-    background-color: rgb(43, 119, 235);
-    font-weight: bold;
-    color: white;
-    border-color: white;
 }

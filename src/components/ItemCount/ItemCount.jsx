@@ -1,23 +1,20 @@
 import React, { useState } from "react";
 import "./Counter.css";
+import Button from "react-bootstrap/Button";
 
 function ItemCount(props) {
-  const [clickCount, setClickCount] = useState(props.initial);
+  const [count, setCount] = useState(props.initial);
 
   function Add() {
-    if (clickCount < props.stock) {
-      setClickCount(clickCount + 1);
+    if (count < props.stock) {
+      setCount(count + 1);
     }
   }
 
   function Sub() {
-    if (clickCount > 1) {
-      setClickCount(clickCount - 1);
+    if (count > 1) {
+      setCount(count - 1);
     }
-  }
-
-  function addToCart() {
-    alert("Agregaste " + clickCount + " productos al carrito");
   }
 
   return (
@@ -25,10 +22,12 @@ function ItemCount(props) {
       <h3>Stock: {props.stock}</h3>
       <div>
         <button onClick={Sub}>-</button>
-        <span> {clickCount} </span>
+        <span> {count} </span>
         <button onClick={Add}>+</button>
       </div>
-      <button className="agregar" onClick={addToCart}>Agregar al carrito</button>
+      <Button className="agregar" onClick={() => props.onAdd(count)}>
+        Agregar al carrito
+      </Button>
     </div>
   );
 }
