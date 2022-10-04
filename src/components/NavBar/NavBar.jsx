@@ -2,7 +2,7 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
-import CartWidget from "../CartWidget/CartWidget";
+import CartWidget from "../Cart/CartWidget";
 import { Link } from "react-router-dom";
 
 function NavBar() {
@@ -15,18 +15,18 @@ function NavBar() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link>Inicio</Nav.Link>
-            <Nav.Link>Link</Nav.Link>
+            <Link to="/" className="nav-link">Inicio</Link>
+            <Link className="nav-link">Contacto</Link>
             <NavDropdown title="Categorias" id="basic-nav-dropdown">
-              <NavDropdown.Item>
-                <Link to="/categoria/Calzado">Calzado</Link>
-              </NavDropdown.Item>
-              <NavDropdown.Item>
-                <Link to="/categoria/Indumentaria">Indumentaria</Link>
-              </NavDropdown.Item>
-              <NavDropdown.Item>
-                <Link to="/categoria/Chaleco">Chalecos</Link>
-              </NavDropdown.Item>
+              <Link to="/categoria/Calzado" className="nav-link">
+                Calzado
+              </Link>
+              <Link to="/categoria/Indumentaria" className="nav-link">
+                Indumentaria
+              </Link>
+              <Link to="/categoria/Chaleco" className="nav-link">
+                Chalecos
+              </Link>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>

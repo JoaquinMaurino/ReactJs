@@ -3,13 +3,13 @@ import NavBar from "./components/NavBar/NavBar";
 import ItemListContainer from "./components/Products/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetail/ItemDetailContainer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import MyProvider from "./components/CartWidget/CartContext";
-import Cart from "./components/CartWidget/Cart"
+import CartContextProvider from "./components/Cart/CartContext";
+import Cart from "./components/Cart/Cart";
 
 function App() {
   return (
-    <BrowserRouter>
-      <MyProvider>
+    <CartContextProvider>
+      <BrowserRouter>
         <header>
           <NavBar />
         </header>
@@ -23,10 +23,10 @@ function App() {
           <Route path="/detail/:id" element={<ItemDetailContainer />} />
           <Route path="/categoria/:cat" element={<ItemListContainer />} />
           <Route path="*" element={<h1>404 Not Found</h1>} />
-          <Route path="/cart" element={<Cart/>}/>
+          <Route path="/cart" element={<Cart />} />
         </Routes>
-      </MyProvider>
-    </BrowserRouter>
+      </BrowserRouter>
+    </CartContextProvider>
   );
 }
 
