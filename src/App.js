@@ -5,6 +5,7 @@ import ItemDetailContainer from "./components/ItemDetail/ItemDetailContainer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CartContextProvider from "./components/Cart/CartContext";
 import Cart from "./components/Cart/Cart";
+//import firestore from ":/services/firestore"
 
 function App() {
   return (

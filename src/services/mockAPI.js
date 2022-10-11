@@ -123,7 +123,7 @@ export default function getItems() {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve(data);
-    }, 1);
+    }, 1500);
   });
 }
 
@@ -135,18 +135,18 @@ export function getItem(idItem) {
     setTimeout(() => {
       if (itemFind) resolve(itemFind);
       else reject(new Error("Item no encontrado"));
-    }, 1);
+    }, 1500);
   });
 }
 
 export function getItemsByCategory(cat) {
   return new Promise((resolve, reject) => {
-    let itemFind = data.filter((item) => {
+    let itemFilter = data.filter((item) => {
       return item.categoria === cat;
     });
     setTimeout(() => {
-      if (itemFind) resolve(itemFind);
+      if (itemFilter) resolve(itemFilter);
       else reject(new Error("Item no encontrado"));
-    }, 1);
+    }, 1500);
   });
 }

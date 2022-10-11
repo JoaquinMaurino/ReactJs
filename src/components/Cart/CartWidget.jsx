@@ -13,7 +13,7 @@ function CartWidget() {
     <Link to="/cart">
       <BsFillCartFill/>
       </Link>
-      <span>{getItemQty()}</span>
+      {(cart.length !== 0) && <span>{getItemQty()}</span>}
       </div>
   )
 }
