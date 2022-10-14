@@ -139,7 +139,7 @@ export function getItem(idItem) {
   });
 }
 
-export function getItemsByCategory(cat) {
+export function getItemsBycategoria(cat) {
   return new Promise((resolve, reject) => {
     let itemFilter = data.filter((item) => {
       return item.categoria === cat;

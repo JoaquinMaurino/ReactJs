@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { getItems, /* getItemsByCategory */ } from "../../services/firestore";
+import { getItems, getItemsByCategory } from "../../services/firestore";
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
 import { Jelly } from "@uiball/loaders";
@@ -20,11 +20,11 @@ function ItemListContainer(props) {
           setData(respuestaDatos);
         })
         .finally(() => setLoading(false));
-    } /* else {
+    }  else {
       getItemsByCategory(cat)
-        .then((respuestaDatos) => setData(respuestaDatos))
+        .then((respuestaDatosFiltrados) => setData(respuestaDatosFiltrados))
         .finally(() => setLoading(false));
-    } */
+    } 
   }, [cat]);
 
   return (
