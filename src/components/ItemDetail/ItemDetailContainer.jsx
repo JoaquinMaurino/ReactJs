@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { getItem } from "../../services/mockAPI";
+import { getItem } from "../../services/firestore";
 import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
 import { Jelly } from "@uiball/loaders";
@@ -10,7 +10,7 @@ function ItemDetailContainer() {
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(true);
   
-  const id = Number(useParams().id);
+  const id = useParams().id;
 
   useEffect(() => {
     getItem(id)

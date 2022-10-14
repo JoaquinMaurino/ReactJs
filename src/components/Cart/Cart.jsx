@@ -5,8 +5,13 @@ import { Button } from "react-bootstrap";
 
 function Cart() {
   const { cart, deleteItem, emptyCart, getItemPrice } = useContext(cartContext);
-  (cart.length === 0) && <h2>No hay items agregados al carrito!</h2>;
-  return (
+
+  return cart.length === 0 ? (
+    <div>
+      <h2>No hay items agregados al carrito!</h2>
+      <Link to="/"><Button>Seguir Comprando</Button></Link>
+    </div>
+  ) : (
     <div>
       {cart.map((item) => (
         <>
@@ -14,12 +19,16 @@ function Cart() {
           <p>{item.price}</p>
           <p>{item.count}</p>
           <p>{getItemPrice}</p>
-          <Button variant="danger" onClick={()=>deleteItem(item.id)}>
+          <Button variant="danger" onClick={() => deleteItem(item.id)}>
             Eliminar item
           </Button>
         </>
       ))}
-      {(cart.length !== 0) && <Button variant="secondary" onClick={emptyCart}>Vaciar Carrito</Button>}
+      {cart.length !== 0 && (
+        <Button variant="secondary" onClick={emptyCart}>
+          Vaciar Carrito
+        </Button>
+      )}
     </div>
   );
 }

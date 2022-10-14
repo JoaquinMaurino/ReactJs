@@ -1,9 +1,13 @@
-/* // Import the functions you need from the SDKs you need
+// Import the functions you need from the SDKs you need
 import { fireEvent } from "@testing-library/react";
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs} from "firebase/firestore"
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import {
+  getFirestore,
+  collection,
+  getDocs,
+  doc,
+  getDoc,
+} from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -12,18 +16,27 @@ const firebaseConfig = {
   projectId: "sga-uniformes",
   storageBucket: "sga-uniformes.appspot.com",
   messagingSenderId: "723462043293",
-  appId: "1:723462043293:web:26b9065e4ccc3c3f890674"
+  appId: "1:723462043293:web:26b9065e4ccc3c3f890674",
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const firestore = getFirestore(app)
+const firestore = getFirestore(app);
 
-export async function getItems(){
-const miColeccion = collection(firestore, "indumentaria");
-let respuesta = await getDocs(miColeccion);
-let dataDocs = respuesta.docs.map(documento => documento.data());
-return dataDocs
+export async function getItems() {
+  const miColeccion = collection(firestore, "Indumentaria");
+  let respuesta = await getDocs(miColeccion);
+  let dataDocs = respuesta.docs.map((documento) => {
+    let docWithID = { ...documento.data(), id: documento.id };
+    return docWithID;
+  });
+  return dataDocs;
 }
 
-export default firestore;  */
+export async function getItem(idParams) {
+  const docRef = doc(firestore, "Indumentaria", idParams);
+  const docSnap = await getDoc(docRef);
+  return { ...docSnap.data(), id: docSnap.id };
+}
+
+export default firestore;
