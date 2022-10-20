@@ -1,0 +1,40 @@
+.seguirContainer{
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.vaciar{
+    display: flex;
+    justify-content: center;
+}
+.delete{
+    height: auto;
+}
+
+.tabla{
+    width: 95%;
+    margin: 20px auto;
+}
+
+.tableHead{
+    background-color: rgb(179, 179, 179);
+}
+
+.tableRow{
+    border: 1px solid black;
+}
+
+th, td{
+    width: 16%;
+    font-size: larger;
+
+}
+td{
+    font-weight: bold;
+}
+
+img{
+    scale: 0.8;
+}

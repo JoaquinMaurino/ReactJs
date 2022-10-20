@@ -7,7 +7,6 @@ import { cartContext} from "./CartContext"
 
 function CartWidget() {
   const {cart, getItemQty} = useContext(cartContext)
-  console.log(cart)
   return (
     <div>
     <Link to="/cart">

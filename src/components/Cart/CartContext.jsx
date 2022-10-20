@@ -39,14 +39,16 @@ function CartContextProvider({ children }) {
   };
 
   //Cuantos items hay en el cart
-  const getItemQty = () => {
+  function getItemQty() {
     return cart.reduce((acc, item) => (acc += item.count), 0);
-  };
+  }
 
   //Retorna el precio del item por la cantidad de ese item en el cart
-  const getItemPrice = () => {
-    return cart.reduce((acc, item) => (acc += item.price * item.count), 0);
-  };
+  function getItemPrice() {
+    let total = 0
+    cart.forEach(item => total += item.count * item.price);
+    return total;
+  }
 
   return (
     <Provider

@@ -1,0 +1,16 @@
+label{
+    display: inline-block;
+    width: 80px;
+    margin: 10px;
+    font-weight: bold;
+}
+
+.formContainer{
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 80px;
+    margin-bottom: 40px;
+    padding-top: 20px;
+    border-top: 1px solid black;
+
+}

@@ -8,7 +8,7 @@ import {cartContext} from "../Cart/CartContext"
 
 function ItemDetail(item) {
 
-const [cantidad, setCantidad] = useState()
+
 
 const { addItem } = useContext(cartContext)
 
@@ -29,7 +29,7 @@ function addToCart(count) {
         <p>{item.detail}</p>
         <h3>{item.price}</h3>
         <div className="text-center">
-          {showItemCount ? <ItemCount initial={1} stock={item.stock} onAdd={addToCart}/>: <Link to="/cart"> <Button>Finalizar Compra</Button></Link>}
+          {showItemCount ? <ItemCount initial={1} stock={item.stock} onAdd={addToCart}/>: <Link to="/cart"> <Button>Ir al Carrito</Button></Link>}
         </div>
       </div>
     </div>
