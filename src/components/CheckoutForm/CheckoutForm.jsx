@@ -2,22 +2,19 @@ import React, { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { cartContext } from "../Cart/CartContext";
 import Button from "react-bootstrap/Button";
-import {createBuyOrder} from "../../services/firestore"
-import "./CheckoutForm.css"
+import { createBuyOrder } from "../../services/firestore";
+import "./CheckoutForm.css";
 
 function CheckoutForm() {
-    const [dataForm, setDataForm] = useState({
-        name: "",
-        phone: "",
-        email: "",
-      });    
-    const { cart, getItemPrice } = useContext(cartContext);
-    const navigate = useNavigate();
-  
-  function checkOut(e) {
-    
-    e.preventDefault();
+  const [dataForm, setDataForm] = useState({
+    name: "",
+    phone: "",
+    email: "",
+  });
+  const { cart, getItemPrice, emptyCart } = useContext(cartContext);
+  const navigate = useNavigate();
 
+  function checkOut() {
     const orderData = {
       buyer: dataForm,
       items: cart,
@@ -27,9 +24,10 @@ function CheckoutForm() {
     createBuyOrder(orderData).then((orderID) => {
       navigate(`/checkout/${orderID}`);
     });
+
+    emptyCart();
   }
 
-  
   function inputChange(event) {
     let inputName = event.target.name;
     let inputValue = event.target.value;
@@ -41,7 +39,9 @@ function CheckoutForm() {
 
   return (
     <div className="formContainer">
-        <h4>Completa el siguiente formulario con tus datos para finalizar tu compra:</h4>
+      <h4>
+        Completa el siguiente formulario con tus datos para finalizar tu compra:
+      </h4>
       <form onSubmit={checkOut}>
         <div>
           <label htmlFor="name">Nombre</label>
@@ -77,10 +77,10 @@ function CheckoutForm() {
           />
         </div>
         <div>
-        <Link>
-          <Button onClick={checkOut}>Finalizar Compra</Button>
-        </Link>
-      </div>
+          <Link>
+            <Button onClick={checkOut}>Finalizar Compra</Button>
+          </Link>
+        </div>
       </form>
     </div>
   );

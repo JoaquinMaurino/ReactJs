@@ -6,11 +6,13 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CartContextProvider from "./components/Cart/CartContext";
 import Cart from "./components/Cart/Cart";
 import Checkout from "./components/Checkout/Checkout";
+import {exportDataToFirebase} from "./services/firestore"
 
 function App() {
 
   return (
     <CartContextProvider>
+      <button onClick={exportDataToFirebase}>Export</button>
       <BrowserRouter>
         <header>
           <NavBar />
