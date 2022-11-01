@@ -3,6 +3,7 @@ import { getItems, getItemsByCategory } from "../../services/firestore";
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
 import { Jelly } from "@uiball/loaders";
+import "./itemListContainer.css";
 
 function ItemListContainer(props) {
   const [data, setData] = useState([]);
@@ -20,17 +21,22 @@ function ItemListContainer(props) {
           setData(respuestaDatos);
         })
         .finally(() => setLoading(false));
-    }  else {
+    } else {
       getItemsByCategory(cat)
         .then((respuestaDatosFiltrados) => setData(respuestaDatosFiltrados))
         .finally(() => setLoading(false));
-    } 
+    }
   }, [cat]);
 
   return (
     <div>
-      {loading && <Jelly size={80} speed={0.9} color="black" />}
-      <h1 className="text-center">{props.greeting}</h1>
+      <h1 className="text-center">Bienvenido/a la tienda de SGA Uniformes</h1>
+      {loading && (
+        <div className="loader">
+          <Jelly size={100} speed={0.9} color="black" />
+        </div>
+      )}
+      
       <ItemList item={data} />
     </div>
   );

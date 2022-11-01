@@ -3,3 +3,6 @@ button{
     border-radius: 8px;
     margin: 1px;
 }
+span,button{
+    font-weight: bold;
+}

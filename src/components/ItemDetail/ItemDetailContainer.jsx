@@ -3,6 +3,7 @@ import { getItem } from "../../services/firestore";
 import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
 import { Jelly } from "@uiball/loaders";
+import "./ItemDetailContainer.css"
 
 
 function ItemDetailContainer() {
@@ -28,16 +29,19 @@ function ItemDetailContainer() {
             <p>{error}</p>
           </div>
          : 
-          <Jelly size={80} speed={0.9} color="black" />
+         <div className="loader">
+         <Jelly size={100} speed={0.9} color="black" />
+       </div>
         }
       </>
     );
   }
 
   return (
-    <div>
-      <div className="container">
+    <div className="container">
+      <div className="detail">
         <ItemDetail
+        key={data.id}
           id={data.id}
           img={data.img}
           name={data.name}

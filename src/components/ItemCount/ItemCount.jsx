@@ -19,7 +19,7 @@ function ItemCount(props) {
 
   return (
     <div>
-      <h3>Stock: {props.stock}</h3>
+      <p>Stock: {props.stock}</p>
       <div>
         <button onClick={Sub}>-</button>
         <span> {count} </span>

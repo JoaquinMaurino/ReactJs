@@ -78,7 +78,7 @@ function CheckoutForm() {
         </div>
         <div>
           <Link>
-            <Button onClick={checkOut}>Finalizar Compra</Button>
+            <Button  disabled={!dataForm.email || !dataForm.name || !dataForm.phone} onClick={checkOut}>Finalizar Compra</Button>
           </Link>
         </div>
       </form>

@@ -12,7 +12,7 @@ function App() {
 
   return (
     <CartContextProvider>
-      <button onClick={exportDataToFirebase}>Export</button>
+   {/*  <button onClick={exportDataToFirebase}>Export</button> */}
       <BrowserRouter>
         <header>
           <NavBar />
@@ -21,7 +21,7 @@ function App() {
           <Route
             path="/"
             element={
-              <ItemListContainer greeting="Bienvenido/a la tienda de SGA Uniformes" />
+              <ItemListContainer/>
             }
           />
           <Route path="/detail/:id" element={<ItemDetailContainer />} />

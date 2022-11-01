@@ -22,7 +22,7 @@
     background-color: rgb(179, 179, 179);
 }
 
-.tableRow{
+.tableRow, .tableRowMap{
     border: 1px solid black;
 }
 
@@ -36,5 +36,5 @@ td{
 }
 
 img{
-    scale: 0.8;
+    scale: 0.5;
 }

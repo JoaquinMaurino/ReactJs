@@ -32,7 +32,7 @@ function Cart() {
         </thead>
         <tbody className="text-center">
           {cart.map((item) => (
-            <tr key={item.id} className="tableRow">
+            <tr key={item.id} className="tableRowMap">
               <td id={item.id}>
                 <img src={item.img} />
               </td>
